@@ -1,0 +1,2 @@
+MONGODB_PORT = 27018
+DB_IMG_PATH = r"../Dataset2"
