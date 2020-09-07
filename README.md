@@ -2,43 +2,28 @@
  This repository consists of the project regarding CSE 515 MultiMedia and Web databases course. The project was divided into 3 phases. The details about the goals of each phase and how to run the code of each phase has been mentioned below:
  
  Phase 1:
- 	The goal of phase 1 of the project is to get familiar with the 11k hand's image dataset and understand the concept of feature extraction and implementation of the two image feature extraction models. The two implemented models are Scale-invariant feature transformation and Local binary patterns, which helped in understanding the feature vector space/ feature descriptor of each implemented model. Once the features are extracted for the images, these features are used to retrieve the k similar images from the database for the given image. To find k similar images, the similarity/ distance functions are implemented, and the results obtained using these functions showed the importance of each function and characteristics of the images it captures.
+ 	The goal of phase 1 of the project is to get familiar with the 11k hand's image dataset and understand the concept of feature extraction and implementation of the two image feature extraction models. The two implemented models are Scale-invariant feature transformation and Color Moments, which helped in understanding the feature vector space/ feature descriptor of each implemented model. Once the features are extracted for the images, these features are used to retrieve the k similar images from the database for the given image. To find k similar images, the similarity/ distance functions are implemented, and the results obtained using these functions showed the importance of each function and characteristics of the images it captures.
 	
-		 SIFT:
 		-- code contains all the source code files
-			   -- Start_Script.py : it is the start script to run the sift code 
-			   -- Sift_Feature.py : Code for SIFT feature descriptor calculation and similarity score
-		-- output
-			   -- SIFT : Contains all the descriptor output in xlsx format. the results will be stored in Extracted_Features folder.
-				   -- match : contains last k matched images for task 3 will be output into Sift_Output folder.
+			-- ColorMoments.py : Code for CM feature description calculation and matching score
+			-- SIFT.py : Code for SIFT feature description calculation and matching score
+			-- create_feature_script.py : Script to perform task1, task2, task3
+
+			-- CM : Contains all the descriptor output in csv format
+			    -- match : contains last k matched images for task 3
+			-- SIFT : Contains all the descriptor output in csv format
+			    -- match : contains last k matched images for task 3
+
 		Example query to execute task 1 :-
-		   python Sift_Feature.py.py -m SIFT -d Images -i Hand_0011362.jpg -s
+		    python create_feature_script.py -m SIFT -d Images -i Hand_0009445.jpg -s
+
 		Example query to execute task 2 :-
-		   python Sift_Feature.py.py -m SIFT -d Images
+		    python create_feature_script.py -m SIFT -d Images
+
 		Example query to execute task 3 :-
-		   python Sift_Feature.py.py -m SIFT -d Images -i Hand_0011362.jpg -k 5 -r
-		Note:- Keep code, <input image directory> and output at same level
+		    python create_feature_script.py -m SIFT -d Images -i Hand_0009445.jpg -k 5 -r
 
-		LBP:
-
-		Task 1, Task 2, and Task 3 is run using the script task1.py, task2.py and task3.py respectively.
-
-		local_Binary_Pattern.py has the implementation of LBP, lbp.py has the code for computing the descriptor and similarity_LBP.py has similarity score find code.
-
-		1. python task1.py -i <path of image> -m <model>
-		   Example query to execute task 1 :-
-			python lbp_task1.py -i Hand_0011362.jpg -m SIFT
-
-		2. python task2.py -d <path of folder> -m <model>
-		   Example query to execute task 2 :-
-			python lbp_task2.py -d Sample_Hand -m SIFT
-
-		python task3.py -i <path of query image> -m <model> -k <count of similar images> -d <path of feature descriptor>
-
-		Output:
-		--The output of task1 is in folder task1outputforLBP
-		--The Output of task 2 is in folder task2outputforLBP
-		--The output of task 3 is in folder task3outputforLBP (descriptor of query image) and task3outputimageforLBP (images) 
+	Note:- Keep code, <input image directory> and output at same level
 		
 		
 
